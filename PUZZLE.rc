@@ -1,0 +1,137 @@
+#include <windows.h>
+#include "IDS.h"
+//ICONO ICON MOVEABLE PURE LOADONCALL DISCARDABLE "ICONO.ico"
+
+
+#ifdef whitdir
+Menu MENUEX
+BEGIN
+   POPUP "&Opciones"
+   BEGIN
+        MENUITEM "&Abrir\aCtrl + A", CM_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Imagenes PUZZLE\aCtrl + D", CM_OPEN_PUZZLE
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        MENUITEM "&Amateur", Amateur
+        MENUITEM SEPARATOR
+        MENUITEM "&Experience", Experience
+        MENUITEM SEPARATOR
+        MENUITEM "&Crazy", Crazy
+        MENUITEM SEPARATOR
+        MENUITEM "&Insane", Insane
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        
+        MENUITEM "&Original\aCtrl + O", Original
+        MENUITEM SEPARATOR
+        MENUITEM "&Puzzle\aCtrl + P", Puzzle
+        MENUITEM SEPARATOR
+        
+        MENUITEM "&Salir\aCtrl + Q", CM_SALIR
+   END
+END
+aceleradores ACCELERATORS
+BEGIN
+     "^A" , CM_OPEN
+     "^D",  CM_OPEN_PUZZLE
+
+     "^Q",  CM_SALIR
+     "^O",  Original
+     "^P",   Puzzle
+     "P",   CM_PRB
+     "p",   CM_PRB
+END
+#else
+Menu MENUEX
+BEGIN
+   POPUP "&Opciones"
+   BEGIN
+        MENUITEM "&Abrir\aCtrl + A", CM_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        MENUITEM "&Amateur", Amateur
+        MENUITEM SEPARATOR
+        MENUITEM "&Experience", Experience
+        MENUITEM SEPARATOR
+        MENUITEM "&Crazy", Crazy
+        MENUITEM SEPARATOR
+        MENUITEM "&Insane", Insane
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        MENUITEM SEPARATOR
+        
+        MENUITEM "&Original\aCtrl + O", Original
+        MENUITEM SEPARATOR
+        MENUITEM "&Puzzle\aCtrl + P", Puzzle
+        MENUITEM SEPARATOR
+        
+        MENUITEM "&Salir\aCtrl + Q", CM_SALIR
+   END
+END
+aceleradores ACCELERATORS
+BEGIN
+     "^A" , CM_OPEN
+     /*
+     "Z",   Amateur
+     "z",   Amateur
+     "X",   Experience
+     "x",   Experience
+     "C",   Crazy
+     "c",   Crazy
+     "V",   Insane
+     "v",   Insane
+     */
+     "^Q",  CM_SALIR
+     "^O",  Original
+     "^P",   Puzzle
+     "P",   CM_PRB
+     "p",   CM_PRB
+END
+
+
+
+
+
+#endif
+
+
+
+
+
+
+
+
+DialogoText DIALOG 0 , 0 , 150 , 50
+STYLE (DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_OVERLAPPEDWINDOW  - ( WS_MAXIMIZEBOX | WS_SIZEBOX  ) )
+CAPTION "Hey!"
+FONT 8, "Times New Roman"
+BEGIN
+
+/*
+ CONTROL "" , ID_Dlg_fondo , "STATIC" , 
+    WS_CHILD | WS_VISIBLE | SS_BITMAP, 
+    0 , 0 , 150 , 50
+*/
+/*
+ CONTROL "Armaste el rompecabezas!." , ID_Dlg , "STATIC", 
+    SS_LEFT | WS_CHILD | WS_VISIBLE, 
+    8 , 9 , 120 , 12
+*/  
+    /*
+ CONTROL "Aceptar" , IDOK , "BUTTON" ,
+    BS_DEFPUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP ,
+    8 , 26 , 50 , 18
+    /*
+ CONTROL "Cancelar", IDCANCEL, "BUTTON", 
+    BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 
+    61, 26, 45, 14
+    */
+END
